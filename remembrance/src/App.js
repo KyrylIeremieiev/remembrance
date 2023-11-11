@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <img className="banner"src={Sky}></img>
       <section className='welcome'></section>
-      <section className='dashboard'></section>
+      <section className='dashboard'>Welcome To Remembrance</section>
     </div>
   );
 }

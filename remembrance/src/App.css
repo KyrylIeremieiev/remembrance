@@ -61,8 +61,13 @@ img{
 }
 
 .dashboard{
-  background: #031119;
   height: 100vh;
   z-index: 1;
+  background-color: #031119;
+  color: white;
+  font-size: 10vw; /* Responsive font size */
+  font-weight: bold;
+  text-align: center; /* Center text */
+  mix-blend-mode: multiply; /* This makes the cutout text possible */
 }
 
