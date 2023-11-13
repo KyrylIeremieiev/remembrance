@@ -8,6 +8,8 @@ figure,
 dl, dd, dt {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: #D2E0EA;
 }
 
 body {
@@ -53,9 +55,11 @@ img{
   z-index: -1;
 }
 
+
 .welcome{
-  height: 65vh;
+  height: 75vh;
   width: 100vh;
+
 }
 
 .welcome__line {
@@ -66,72 +70,23 @@ img{
   z-index: -1;
 }
 
-
-
-.forefront{
-  transform: translateY(10%);
-}
-
-.transition{
-
-  height: 60vh;
-  z-index: 1;
-  background-color: #031119;
-  color: white;
-  font-size: 10vw; /* Responsive font size */
-  font-weight: bold;
-  text-align: center; /* Center text */
-  mix-blend-mode: multiply; /* This makes the cutout text possible */
-}
-
-.dashboard{
-  height: 100%;
-  background-color: #031119;
-}
-
-.welcome__bottom{
-  width: 100vw;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-}
-
-.arrow {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 30px solid #D2E0EA;
-  position: relative;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(20px);
-  }
-  60% {
-    transform: translateY(10px);
-  }
-}
-
 .welcome{
   color: #D2E0EA;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 4rem;
+  width: 100vw;
+display: flex;
+align-items: center;
+flex-direction: column;
   padding-top: 13rem;
-  padding-left: 8rem;
 }
 
-.welcome > button{
-  margin-top: 10rem;
-  height: 10rem;
-  width: 20rem;
+.welcome__wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.welcome__button{
+
   border: none;
   background: none;
   color: #D2E0EA;
@@ -145,11 +100,11 @@ img{
   cursor: pointer;
 }
 
-.welcome__title{
 
+.welcome__title{
 }
 h1{
-  font-size: 5rem;
+  font-size: 11.27vw;
 }
 
 
@@ -157,11 +112,14 @@ h1{
   color: #D2E0EA;
   position: fixed;
   width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .nav__list{
   display: flex;
   justify-content: flex-end;
+  width: 80vw;
   gap: 2rem;
   padding: 2rem;
 }
@@ -176,4 +134,26 @@ h1{
 .nav__button:hover{
   color: blanchedalmond;
   cursor: pointer;
+}
+
+
+.dashboard{
+  display: flex;
+  justify-content: center;
+  padding-top: 15rem;
+  height: 70%;
+  background-color: #031119;
+}
+
+.dashboard__article{
+  width: 80vw;
+}
+.dashboard__title{
+  font-size: 5rem;
+  color: blanchedalmond;
+  
+}
+
+.dashboard__about{
+  font-size: 2rem;
 }
