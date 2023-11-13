@@ -1,10 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import Sky from './img/sky.jpg'
-import forefront from './img/white.png'
+import darkSky from './img/nightSky.jpg'
 import { Helmet } from 'react-helmet';
+import { useEffect, useState } from 'react';
+
 
 function App() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const currentPosition = window.scrollY;
+    setScrollPosition(currentPosition);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <div className="App">
       <Helmet>
@@ -12,13 +26,18 @@ function App() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Sometype+Mono:wght@400;500;600&family=Ubuntu:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"/>
       </Helmet>
-      <img className="banner"src={Sky}></img>
-      
-      <nav className='nav'>
+      <img src={Sky} className={`banner ${scrollPosition > 60 ? 'darken' : ''}`}></img>
+      <nav className={`nav ${scrollPosition > 60 ? 'scrolled' : ''}`}>
+        <figure className='nav__logo'>Kyrylo Ieremieiev.</figure>
         <ul className='nav__list'>
           <li className='nav__Item'>
             <button className='nav__button'>
               New
+            </button>
+          </li>
+          <li className='nav__Item'>
+            <button className='nav__button'>
+              About
             </button>
           </li>
           <li className='nav__Item'>

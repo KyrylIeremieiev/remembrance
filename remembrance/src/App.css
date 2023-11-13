@@ -19,6 +19,19 @@ body {
 
 }
 
+.darken{
+  filter: brightness(50%);
+  animation: blackout 1s;
+}
+@keyframes blackout {
+  from{
+    filter: brightness(100%);
+  }
+  to{
+    filter: brightness(50%);
+  }
+}
+
 ol, ul {
   list-style: none;
 }
@@ -56,11 +69,6 @@ img{
 }
 
 
-.welcome{
-  height: 75vh;
-  width: 100vh;
-
-}
 
 .welcome__line {
   width: 100vw;
@@ -73,10 +81,11 @@ img{
 .welcome{
   color: #D2E0EA;
   width: 100vw;
+  height: 80vh;
 display: flex;
 align-items: center;
 flex-direction: column;
-  padding-top: 13rem;
+  padding-top: 8rem;
 }
 
 .welcome__wrapper{
@@ -104,7 +113,7 @@ flex-direction: column;
 .welcome__title{
 }
 h1{
-  font-size: 11.27vw;
+  font-size: 14.5vw;
 }
 
 
@@ -112,16 +121,25 @@ h1{
   color: #D2E0EA;
   position: fixed;
   width: 100vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  transition: background 0.5s;
+
 }
 
+.nav__logo{
+  font-size: 2rem;
+  padding-left: 2rem;
+}
 .nav__list{
   display: flex;
-  justify-content: flex-end;
-  width: 80vw;
   gap: 2rem;
-  padding: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+  justify-content: center;
+
 }
 .nav__button{
   border: none;
@@ -129,6 +147,7 @@ h1{
   color: #D2E0EA;
   font-size: 1.5rem;
   transition: color 0.5s;
+  
 }
 
 .nav__button:hover{
@@ -136,17 +155,43 @@ h1{
   cursor: pointer;
 }
 
+.scrolled{
+  
+}
+
+.scrolled::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+  animation: scrolled 0.3s ease-out;
+  border-bottom: 0.5px solid #D2E0EA;
+}
+
+@keyframes scrolled {
+  from{
+    backdrop-filter: blur(0rem);
+  }
+  to{
+    backdrop-filter: blur(1rem);
+  }
+}
 
 .dashboard{
   display: flex;
-  justify-content: center;
-  padding-top: 15rem;
-  height: 70%;
-  background-color: #031119;
+  padding-top: 4rem;
+
+
 }
 
 .dashboard__article{
-  width: 80vw;
+  width: 50vw;
+  padding: 2rem;
+  padding-top: 0;
 }
 .dashboard__title{
   font-size: 5rem;
