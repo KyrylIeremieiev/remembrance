@@ -20,7 +20,7 @@ body {
 }
 
 .darken{
-  filter: brightness(50%);
+  filter: brightness(30%);
   animation: blackout 1s;
 }
 @keyframes blackout {
@@ -28,7 +28,7 @@ body {
     filter: brightness(100%);
   }
   to{
-    filter: brightness(50%);
+    filter: brightness(30%);
   }
 }
 
@@ -184,14 +184,24 @@ h1{
 .dashboard{
   display: flex;
   padding-top: 4rem;
-
+  justify-content: space-between;
 
 }
 
+.dashboard--right{
+  justify-content: flex-end;
+}
+
 .dashboard__article{
-  width: 50vw;
+  width: 40vw;
   padding: 2rem;
   padding-top: 0;
+}
+
+.dashboard__article--right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .dashboard__title{
   font-size: 5rem;
@@ -200,5 +210,64 @@ h1{
 }
 
 .dashboard__about{
-  font-size: 2rem;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+}
+
+.dashboard__link{
+  color: blanchedalmond;
+  text-decoration: underline;
+}
+
+.fadein{
+  animation: fadein 2s ease-in;
+}
+
+@keyframes fadein {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.contact{
+  height: 10vh;
+  position: relative;
+  margin-top: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+  animation: scrolled 0.3s ease-out;
+  border-top: 0.5px solid #D2E0EA;
+}
+
+.contact__logos{
+  display: flex;
+  gap: 2rem;
+  font-size: 3rem;
+}
+
+.contact__logo{
+  transition: 0.5s all;
+}
+
+.contact__logo:hover{
+  color: blanchedalmond;
+  cursor: pointer;
 }
